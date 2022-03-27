@@ -49,11 +49,11 @@ jobs:
 
       - name: Helm - Update Chart Dependencies - godaddy-webhook
         run: |
-          helm dependency update ./helm
+          helm dependency update ./deploy/helm
 
       - name: Helm - Package Chart - godaddy-webhook
         run: |
-          helm package --app-version $TAG_NAME --version $TAG_NAME ./helm
+          helm package --app-version $TAG_NAME --version $TAG_NAME ./deploy/helm
 
       - name: Helm Publish Chart - godaddy-webhook
         run: |
